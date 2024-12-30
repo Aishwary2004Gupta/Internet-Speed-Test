@@ -7,7 +7,7 @@ def bytes_to_mb(bytes):
 
 st = speedtest.Speedtest()
 
-start = input("Press Enter to start the speed test")
+input("Press Enter to start the speed test")  # Removed unused variable 'start'
 download_speed = str(bytes_to_mb(st.download()))
 upload_speed = str(bytes_to_mb(st.upload()))
 ping = st.results.ping
