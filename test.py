@@ -6,3 +6,6 @@ def bytes_to_mb(bytes):
     return int(bytes / MB)
 
 st = speedtest.Speedtest()
+
+start = input("Press Enter to start the speed test")
+download_speed = str(bytes_to_mb(st.download()))
