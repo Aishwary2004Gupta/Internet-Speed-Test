@@ -9,3 +9,4 @@ st = speedtest.Speedtest()
 
 start = input("Press Enter to start the speed test")
 download_speed = str(bytes_to_mb(st.download()))
+upload_speed = str(bytes_to_mb(st.upload()))
