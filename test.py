@@ -7,9 +7,9 @@ def bytes_to_mb(bytes):
 
 try:
     st = speedtest.Speedtest()
-    st.get_servers()  # Get a list of available servers
-    st.get_best_server()  # Select the best server based on ping
-    input("Press Enter to start the speed test")  # Removed unused variable 'start'
+    st.get_servers()  
+    st.get_best_server()  
+    input("Press Enter to start the speed test")  
     download_speed = str(bytes_to_mb(st.download()))
     upload_speed = str(bytes_to_mb(st.upload()))
     ping = st.results.ping
