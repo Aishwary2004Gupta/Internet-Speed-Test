@@ -11,3 +11,7 @@ start = input("Press Enter to start the speed test")
 download_speed = str(bytes_to_mb(st.download()))
 upload_speed = str(bytes_to_mb(st.upload()))
 ping = st.results.ping
+
+print(f"Download Speed: {download_speed} MB/s")
+print(f"Upload Speed: {upload_speed} MB/s")
+print(f"Ping: {ping} ms")
