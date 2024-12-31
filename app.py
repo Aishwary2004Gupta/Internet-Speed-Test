@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
 import speedtest
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 def bytes_to_mb(bytes):
     KB = 1024
