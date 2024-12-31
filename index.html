@@ -45,7 +45,7 @@
 <body>
     <h1>Internet Speed Test</h1>
     <div id="speed-container">
-        <button onclick="startSpeedTest()">Start Speed Test</button>
+        <button id="start-test">Start Speed Test</button>
         <div id="results" style="display:none;">
             <p class="result" id="download-speed">Download Speed: </p>
             <p class="result" id="upload-speed">Upload Speed: </p>
@@ -53,20 +53,27 @@
         </div>
     </div>
     <script>
-        async function startSpeedTest() {
+        document.getElementById("start-test").addEventListener("click", async () => {
             const results = document.getElementById("results");
             results.style.display = "none";
+
             try {
-                const response = await fetch("/api/speedtest");
+                const response = await fetch("http://127.0.0.1:5000/api/speedtest");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
+
                 document.getElementById("download-speed").textContent = `Download Speed: ${data.download_speed} MB/s`;
                 document.getElementById("upload-speed").textContent = `Upload Speed: ${data.upload_speed} MB/s`;
                 document.getElementById("ping").textContent = `Ping: ${data.ping} ms`;
+
                 results.style.display = "block";
             } catch (error) {
                 alert("Error running speed test. Please try again!");
+                console.error(error);
             }
-        }
+        });
     </script>
 </body>
 </html>
