@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: #f1faee;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        #speed-container {
+            margin: 20px auto;
+            padding: 20px;
+            background: #1d3557;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+        button {
+            background: #e63946;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #a6283c;
+        }
+        .result {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internet Speed Test</h1>
+    <div id="speed-container">
+        <button onclick="startSpeedTest()">Start Speed Test</button>
+        <div id="results" style="display:none;">
+            <p class="result" id="download-speed">Download Speed: </p>
+            <p class="result" id="upload-speed">Upload Speed: </p>
+            <p class="result" id="ping">Ping: </p>
+        </div>
+    </div>
+    <script>
+        async function startSpeedTest() {
+            const results = document.getElementById("results");
+            results.style.display = "none";
+            try {
+                const response = await fetch("/api/speedtest");
+                const data = await response.json();
+                document.getElementById("download-speed").textContent = `Download Speed: ${data.download_speed} MB/s`;
+                document.getElementById("upload-speed").textContent = `Upload Speed: ${data.upload_speed} MB/s`;
+                document.getElementById("ping").textContent = `Ping: ${data.ping} ms`;
+                results.style.display = "block";
+            } catch (error) {
+                alert("Error running speed test. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>
