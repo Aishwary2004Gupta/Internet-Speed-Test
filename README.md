@@ -39,3 +39,15 @@ The script will display the following details:
 - **Upload Speed**: The upload speed in MB/s.
 - **Ping**: The ping time in milliseconds.
 
+## Error Handling
+
+The script includes basic error handling for:
+- Failed configurations due to network issues.
+- Unexpected errors during execution.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
