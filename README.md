@@ -9,3 +9,8 @@ This Python script measures your internet speed by calculating the download spee
 - Measures **Upload Speed** (in MB/s).
 - Displays the **Ping** (in milliseconds).
 - User-friendly interface to start the test.
+
+## Prerequisites
+
+- **Python**: Ensure you have Python 3.x installed on your system.
+- **speedtest-cli**: This script uses the `speedtest` library. Install it via pip if not already installed.
