@@ -29,3 +29,13 @@ pip install speedtest-cli
    python speedtest_script.py
    ```
 
+4. Follow the on-screen instructions to start the speed test.
+
+## Output
+
+The script will display the following details:
+
+- **Download Speed**: The download speed in MB/s.
+- **Upload Speed**: The upload speed in MB/s.
+- **Ping**: The ping time in milliseconds.
+
