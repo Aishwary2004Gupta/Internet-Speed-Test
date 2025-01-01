@@ -14,3 +14,7 @@ This Python script measures your internet speed by calculating the download spee
 
 - **Python**: Ensure you have Python 3.x installed on your system.
 - **speedtest-cli**: This script uses the `speedtest` library. Install it via pip if not already installed.
+
+```bash
+pip install speedtest-cli
+```
