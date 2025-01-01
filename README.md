@@ -18,3 +18,14 @@ This Python script measures your internet speed by calculating the download spee
 ```bash
 pip install speedtest-cli
 ```
+
+## How to Use
+
+1. Clone or download the script.
+2. Open a terminal in the script's directory.
+3. Run the script using Python:
+
+   ```bash
+   python speedtest_script.py
+   ```
+
